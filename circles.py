@@ -58,7 +58,7 @@ class GraphState:
             if (x_old, y_old) == edge[1]:
                 self.edges[idx] = (edge[0], (x_new, y_new))
         return True
-    
+
     def remove_node(self, x, y):
         if (x, y) not in self.nodes:
             return False
@@ -223,7 +223,7 @@ class GraphTool:
         with open(filename, 'w') as f:
             f.write(self.graph.to_json())
         print("json:", self.graph.to_json())
-    
+
     def load(self):
         # Open a dialog box asking for the filename to load
         filename = tk.filedialog.askopenfilename(**FILEOPENOPTIONS)
@@ -248,7 +248,7 @@ class GraphTool:
                         self.graph.states[edge[1]] = not self.graph.states[edge[1]]
                     elif node == edge[1]:
                         self.graph.states[edge[0]] = not self.graph.states[edge[0]]
-                        
+
                 self.draw_graph()
             return
 
